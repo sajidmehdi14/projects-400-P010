@@ -1,3 +1,213 @@
+
+## Original Project Planning Documentation
+
+# 🔹 Skill 1 — FastAPI CRUD Generator
+
+**Outcome:** Generates full CRUD API from a model
+**Measure:** Replaces ~45–60 minutes manual coding
+
+### Claude Code Prompt
+
+```
+Create a reusable Claude Code skill using skill-creator skill according to claude code standards.
+
+Name: fastapi_crud_builder
+
+From a SQLModel/Pydantic model, generate:
+- FastAPI router
+- CRUD endpoints
+- Dependency injection
+- Status codes
+
+Return:
+1. Skill description
+2. Inputs
+3. Outputs
+4. CLI usage example
+5. Python code (modular, clean)
+```
+
+
+# 🔹 Skill 2 — pytest TDD Generator
+
+**Outcome:** Creates failing tests first
+**Measure:** Improves test coverage + speed
+
+### Claude Code Prompt
+
+```
+Create a reusable Claude Code skill using skill-creator skill according to claude code standards.
+
+Name: pytest_tdd_generator
+
+Given API routes, generate pytest test cases:
+- Positive cases
+- Negative cases
+- Edge cases
+
+Return:
+1. Skill description
+2. Inputs
+3. Outputs
+4. CLI usage example
+5. Pytest code
+```
+# 🔹 Skill 3 — SQLModel Schema Designer
+
+**Outcome:** Produces production-ready models
+**Measure:** Reduces DB design mistakes
+
+### Claude Code Prompt
+
+```
+Create a reusable Claude Code skill using skill-creator skill according to claude code standards.
+
+Name: sqlmodel_schema_designer
+
+Given entity description, generate SQLModel classes with:
+- Relationships
+- Enums
+- Timestamps
+- Indexes
+
+Return:
+1. Skill description
+2. Inputs
+3. Outputs
+4. CLI usage example
+5. SQLModel code
+```
+
+
+# 🔹 Skill 4 — FastAPI Code Reviewer
+
+**Outcome:** Finds bugs + architecture flaws
+**Measure:** Prevents defects before PR
+
+### Claude Code Prompt
+
+```
+Create a reusable Claude Code skill using skill-creator skill according to claude code standards.
+
+Name: fastapi_code_reviewer
+
+Review FastAPI code and return:
+- Bugs
+- Security issues
+- Performance risks
+- Design problems
+
+Return:
+1. Skill description
+2. Inputs
+3. Outputs
+4. CLI usage example
+5. Review format template
+```
+
+# 🔹 Skill 5 — API Refactor Architect
+
+**Outcome:** Refactors into clean architecture
+**Measure:** Improves maintainability
+
+### Claude Code Prompt
+
+```
+Create a reusable Claude Code skill using skill-creator skill according to claude code standards.
+
+Name: api_clean_arch_refactor
+
+Refactor FastAPI app into:
+- routers
+- services
+- models
+- repositories
+
+Return:
+1. Skill description
+2. Inputs
+3. Outputs
+4. CLI usage example
+5. Folder structure + code
+```
+
+
+
+# Part 2 
+#### Prompt 1
+Create a FastAPI CRUD API skeleton using SQLModel and dependency injection.
+Include folder structure and best practices.
+Return only code and folder tree.
+
+
+#### Prompt 2
+Generate pytest test cases for Task CRUD endpoints:
+- create task
+- list tasks
+- update task
+- delete task
+
+Tests must fail before implementation.
+Return only pytest code.
+
+
+#### Prompt 3 Tasks APIs
+Design SQLModel schemas for a Task Management system.
+
+Include:
+- Task table
+- Status enum
+- Created/updated timestamps
+
+Return SQLModel classes only.
+
+
+# Part 3
+Implement full CRUD Task API using FastAPI + SQLModel.
+
+Routes:
+POST /tasks
+GET /tasks
+GET /tasks/{id}
+PUT /tasks/{id}
+DELETE /tasks/{id}
+
+Use clean architecture.
+Return only code.
+
+
+#### prompt 2
+Refactor API into service layer architecture.
+
+Create:
+- routers
+- services
+- models
+- database
+
+Return folder tree + code.
+
+
+#### Prompt 3
+Add global exception handling, validation errors, and proper HTTP status codes to the API.
+
+Return updated FastAPI code only.
+
+
+
+#### Prompt 4
+Review this FastAPI code like a senior backend architect.
+
+Identify:
+- Bugs
+- Security risks
+- Performance issues
+- Design flaws
+
+Return bullet list only.
+
+# Part 3 ( Project Created with claude code & skills)
+
 # Task Management API
 
 A production-ready Task Management API built with FastAPI, SQLModel, and clean architecture principles.
@@ -465,210 +675,3 @@ uvicorn app.main:app --reload
 - Add API documentation with more examples
 
 ---
-
-## Original Project Planning Documentation
-
-# 🔹 Skill 1 — FastAPI CRUD Generator
-
-**Outcome:** Generates full CRUD API from a model
-**Measure:** Replaces ~45–60 minutes manual coding
-
-### Claude Code Prompt
-
-```
-Create a reusable Claude Code skill using skill-creator skill according to claude code standards.
-
-Name: fastapi_crud_builder
-
-From a SQLModel/Pydantic model, generate:
-- FastAPI router
-- CRUD endpoints
-- Dependency injection
-- Status codes
-
-Return:
-1. Skill description
-2. Inputs
-3. Outputs
-4. CLI usage example
-5. Python code (modular, clean)
-```
-
-
-# 🔹 Skill 2 — pytest TDD Generator
-
-**Outcome:** Creates failing tests first
-**Measure:** Improves test coverage + speed
-
-### Claude Code Prompt
-
-```
-Create a reusable Claude Code skill using skill-creator skill according to claude code standards.
-
-Name: pytest_tdd_generator
-
-Given API routes, generate pytest test cases:
-- Positive cases
-- Negative cases
-- Edge cases
-
-Return:
-1. Skill description
-2. Inputs
-3. Outputs
-4. CLI usage example
-5. Pytest code
-```
-# 🔹 Skill 3 — SQLModel Schema Designer
-
-**Outcome:** Produces production-ready models
-**Measure:** Reduces DB design mistakes
-
-### Claude Code Prompt
-
-```
-Create a reusable Claude Code skill using skill-creator skill according to claude code standards.
-
-Name: sqlmodel_schema_designer
-
-Given entity description, generate SQLModel classes with:
-- Relationships
-- Enums
-- Timestamps
-- Indexes
-
-Return:
-1. Skill description
-2. Inputs
-3. Outputs
-4. CLI usage example
-5. SQLModel code
-```
-
-
-# 🔹 Skill 4 — FastAPI Code Reviewer
-
-**Outcome:** Finds bugs + architecture flaws
-**Measure:** Prevents defects before PR
-
-### Claude Code Prompt
-
-```
-Create a reusable Claude Code skill using skill-creator skill according to claude code standards.
-
-Name: fastapi_code_reviewer
-
-Review FastAPI code and return:
-- Bugs
-- Security issues
-- Performance risks
-- Design problems
-
-Return:
-1. Skill description
-2. Inputs
-3. Outputs
-4. CLI usage example
-5. Review format template
-```
-
-# 🔹 Skill 5 — API Refactor Architect
-
-**Outcome:** Refactors into clean architecture
-**Measure:** Improves maintainability
-
-### Claude Code Prompt
-
-```
-Create a reusable Claude Code skill using skill-creator skill according to claude code standards.
-
-Name: api_clean_arch_refactor
-
-Refactor FastAPI app into:
-- routers
-- services
-- models
-- repositories
-
-Return:
-1. Skill description
-2. Inputs
-3. Outputs
-4. CLI usage example
-5. Folder structure + code
-```
-
-
-
-# Part 2 
-#### Prompt 1
-Create a FastAPI CRUD API skeleton using SQLModel and dependency injection.
-Include folder structure and best practices.
-Return only code and folder tree.
-
-
-#### Prompt 2
-Generate pytest test cases for Task CRUD endpoints:
-- create task
-- list tasks
-- update task
-- delete task
-
-Tests must fail before implementation.
-Return only pytest code.
-
-
-#### Prompt 3 Tasks APIs
-Design SQLModel schemas for a Task Management system.
-
-Include:
-- Task table
-- Status enum
-- Created/updated timestamps
-
-Return SQLModel classes only.
-
-
-# Part 3
-Implement full CRUD Task API using FastAPI + SQLModel.
-
-Routes:
-POST /tasks
-GET /tasks
-GET /tasks/{id}
-PUT /tasks/{id}
-DELETE /tasks/{id}
-
-Use clean architecture.
-Return only code.
-
-
-#### prompt 2
-Refactor API into service layer architecture.
-
-Create:
-- routers
-- services
-- models
-- database
-
-Return folder tree + code.
-
-
-#### Prompt 3
-Add global exception handling, validation errors, and proper HTTP status codes to the API.
-
-Return updated FastAPI code only.
-
-
-
-#### Prompt 4
-Review this FastAPI code like a senior backend architect.
-
-Identify:
-- Bugs
-- Security risks
-- Performance issues
-- Design flaws
-
-Return bullet list only.
