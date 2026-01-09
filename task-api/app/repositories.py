@@ -1,6 +1,6 @@
 from typing import List, Optional
 from sqlmodel import Session, select
-from datetime import datetime
+from datetime import datetime, timezone
 from app.models import Task, TaskCreate, TaskUpdate
 
 
@@ -32,7 +32,7 @@ class TaskRepository:
         for key, value in task_dict.items():
             setattr(task, key, value)
 
-        task.updated_at = datetime.utcnow()
+        task.updated_at = datetime.now(timezone.utc)
         self.session.add(task)
         self.session.commit()
         self.session.refresh(task)
